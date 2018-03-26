@@ -1,24 +1,46 @@
-# README
+== README
+# DB design_CHAT SPACE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table: users
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|email|string|null: false, unique: true, foreign_key: true|
+|pwd|string|null: false, unique: true, foreign_key: true|
 
-Things you may want to cover:
+### Association
+- has_many : messages
+- has_many : groups, through: :members
 
-* Ruby version
 
-* System dependencies
+## Table: groups
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true, index: true|
 
-* Configuration
+### Association
+- has_many :users, through: :members
 
-* Database creation
 
-* Database initialization
+## Table: members
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- belongs_to :group
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Table: message
+|Column|Type|Options|
+|------|----|-------|
+|body|text|
+|image|string|
+|user_id|integer|null: false, unique: true|
+|group_id|integer|null: false, unique: true|
 
-* ...
+### Association
+- belongs_to :user
+- belongs_to :group
