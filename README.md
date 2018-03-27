@@ -11,6 +11,7 @@
 ### Association
 - has_many : messages
 - has_many : groups, through: :members
+- has_many : members
 
 
 ## Table: groups
@@ -20,7 +21,8 @@
 
 ### Association
 - has_many :users, through: :members
-
+- has_many : members
+- has_many : messages
 
 ## Table: members
 |Column|Type|Options|
@@ -33,13 +35,13 @@
 - belongs_to :group
 
 
-## Table: message
+## Table: messages
 |Column|Type|Options|
 |------|----|-------|
 |body|text|
 |image|string|
-|user_id|integer|null: false, unique: true|
-|group_id|integer|null: false, unique: true|
+|user_id|references|null: false, unique: true|
+|group_id|references|null: false, unique: true|
 
 ### Association
 - belongs_to :user
