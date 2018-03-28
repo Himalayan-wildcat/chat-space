@@ -1,0 +1,38 @@
+.side-bar
+  = render "side_bar"
+
+.contents
+  .upper-content
+    .left-header
+      .left-header__group
+        Group Name
+        %ul.left-header__members
+          Members:
+          %li.member
+            member1
+          %li.member
+            member2
+    .right-header
+      .right-header__edit-button
+        edit
+  .mid-content
+    .upper-chat-space
+      .upper-chat-space__name
+        name1
+      .upper-chat-space__date
+        yyyy/mm/dd
+    .lower-chat-space
+      .lower-chat-space__content
+        message
+    .upper-chat-space
+      .upper-chat-space__name
+        name1
+      .upper-chat-space__date
+        yyyy/mm/dd
+    .lower-chat-space
+      .lower-chat-space__content
+        message
+  .lower-content
+    %form
+      %input.form__message
+      %input.form__submit{type: 'submit', value: 'Send'}
