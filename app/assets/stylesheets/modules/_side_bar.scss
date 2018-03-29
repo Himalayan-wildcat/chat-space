@@ -1,0 +1,43 @@
+.side-bar {
+  width: 300px;
+  // height: 100%;
+  color: white;
+  float:left;
+  .header {
+    background-color: #253141;
+    height: 100px;
+    padding:0 20px;
+    line-height: 100px;
+    &__login-name {
+      display: inline-block;;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    &__lists{
+      display: inline-block;
+      float: right;
+      .list {
+        display: inline-block;
+      }
+      .icon1 .icon2 {
+        color: white;
+        font-size: 16px;
+      }
+    }
+  }
+  .groups {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    .each-group {
+      padding: 20px 0 40px;
+      &__name {
+        font-size:15px;
+        margin-bottom: 5px;
+      }
+      &__massage {
+        font-size: 16px;
+      }
+    }
+  }
+}
