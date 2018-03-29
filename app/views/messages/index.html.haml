@@ -45,10 +45,10 @@
           .lower-chat-space__text
             text3 text3 text3 text3 text3 text3 text3 text3 text3
     .lower-content
-      .element
       %form
-        %input.element__text{placeholder: "  Type a text here."}
-          %label.element__text--icon
-            = fa_icon 'picture-o', class: 'icon'
-          / %input.invisible{type:'file'}
-        %input.element__button{type:'submit', value:'SEND'}
+        %input.lower-content__text{placeholder: "  Type a text here."}
+          .icon-element
+            %label.icon-element__image
+              = fa_icon 'picture-o', class: 'icon'
+              %input.invisible{type:'file'}
+        %input.lower-content__button{type:'submit', value:'SEND'}

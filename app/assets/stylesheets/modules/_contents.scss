@@ -65,35 +65,38 @@
   }
   .lower-content {
     background-color: #DEDEDE;
-    height:90px;
-    padding:20px 40px;
+    height: 90px;
+    padding: 20px 40px;
     box-sizing: border-box;
-    .element {
-      position: relative;
-      &__text {
-        height: 50px;
-        width: calc(100% - 135px);
-        float:left;
-        border: none;
-        &--icon{
-          background-color: $white;
-          height: 100%;
-          padding-right: 10px;
-          padding-bottom:32px;
+    border: none;
+    &__text {
+      height: 50px;
+      box-sizing:border-box;
+      float: left;
+      width: calc(100% - 150px);
+      border: none;
+    }
+    .icon-element {
+      background-color: $white;
+      height: 50px;
+      float: left;
+      padding-right: 10px;
+      &__image {
+        font-size: 25px;
+        line-height: 50px;
+        .invisible {
+          display: none;
         }
-        // &invisible {
-        //   display: none;
-        // }
       }
-      &__button {
+    }
+    &__button {
       background-color: $blue_for_buttons;
       color: $white;
       border: none;
-      width: 100px;
+      width: 95px;
       height: 50px;
       float: right;
-      margin:0 0 0 15px;
-      }
+      margin-left: 15px;
     }
   }
 }
