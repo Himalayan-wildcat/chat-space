@@ -1,0 +1,99 @@
+.contents {
+  width: calc(100vw - 300px);
+  height: 100%;
+  float: right;
+  .upper-content{
+    background-color: $white;
+    height: 100px;
+    padding: 0 40px;
+    .left-header {
+      float: left;
+      &__group-name {
+        color:#333333;
+        font-size :20px;
+        margin-top: 35px;
+      }
+      &__members {
+        color:#999999;
+        font-size: 12px;
+        margin-top: 15px;
+        display: flex;
+        .member {
+          margin:0 5px;
+          display: inline-block;
+        }
+      }
+    }
+    .right-header {
+      height: 40px;
+      padding:0 20px;
+      margin-top: 28px;
+      color: $blue_for_buttons;
+      border: 1px solid $blue_for_buttons;
+      float: right;
+      line-height: 40px;
+    }
+  }
+  .mid-content {
+    background-color: #FAFAFA;
+    padding:46px 40px 0;
+    height: calc(100vh - 190px - 46px);
+    overflow-y: scroll;
+    .chat-space {
+      .upper-chat-space {
+        display: flex;
+        &__name {
+          color: #434A54;
+          font-weight: bold;
+          font-size: 16px;
+          margin-right:10px;
+        }
+        &__date {
+          color:#999999;
+          font-size: 12px;
+        }
+      }
+      .lower-chat-space {
+        margin-top: 10px;
+        &__text {
+          color: #434A54;
+          font-size: 14px;
+          padding-bottom: 40px;
+        }
+      }
+    }
+  }
+  .lower-content {
+    background-color: #DEDEDE;
+    height:90px;
+    padding:20px 40px;
+    box-sizing: border-box;
+    .element {
+      position: relative;
+      &__text {
+        height: 50px;
+        width: calc(100% - 135px);
+        float:left;
+        border: none;
+        &--icon{
+          background-color: $white;
+          height: 100%;
+          padding-right: 10px;
+          padding-bottom:32px;
+        }
+        // &invisible {
+        //   display: none;
+        // }
+      }
+      &__button {
+      background-color: $blue_for_buttons;
+      color: $white;
+      border: none;
+      width: 100px;
+      height: 50px;
+      float: right;
+      margin:0 0 0 15px;
+      }
+    }
+  }
+}

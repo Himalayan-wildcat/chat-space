@@ -1,38 +1,54 @@
-.side-bar
-  = render "side_bar"
+.container
+  .side-bar
+    = render "side_bar"
 
-.contents
-  .upper-content
-    .left-header
-      .left-header__group
-        Group Name
-        %ul.left-header__members
-          Members:
-          %li.member
-            member1
-          %li.member
-            member2
-    .right-header
-      .right-header__edit-button
-        edit
-  .mid-content
-    .upper-chat-space
-      .upper-chat-space__name
-        name1
-      .upper-chat-space__date
-        yyyy/mm/dd
-    .lower-chat-space
-      .lower-chat-space__content
-        message
-    .upper-chat-space
-      .upper-chat-space__name
-        name1
-      .upper-chat-space__date
-        yyyy/mm/dd
-    .lower-chat-space
-      .lower-chat-space__content
-        message
-  .lower-content
-    %form
-      %input.form__message
-      %input.form__submit{type: 'submit', value: 'Send'}
+  .contents
+    .upper-content
+      .left-header
+        .left-header__group-name
+          Group Name
+          %ul.left-header__members
+            Members:
+            %li.member
+              member1
+            %li.member
+              member2
+      .right-header
+        .right-header__edit-button
+          edit
+    .mid-content
+      .chat-space
+        .upper-chat-space
+          .upper-chat-space__name
+            name1
+          .upper-chat-space__date
+            yyyy/mm/dd
+        .lower-chat-space
+          .lower-chat-space__text
+            text1 text1 text1 text1 text1 text1 text1 text1 text1
+      .chat-space
+        .upper-chat-space
+          .upper-chat-space__name
+            name2
+          .upper-chat-space__date
+            yyyy/mm/dd
+        .lower-chat-space
+          .lower-chat-space__text
+            text2 text2 text2 text2 text2 text2 text2 text2 text2
+      .chat-space
+        .upper-chat-space
+          .upper-chat-space__name
+            name2
+          .upper-chat-space__date
+            yyyy/mm/dd
+        .lower-chat-space
+          .lower-chat-space__text
+            text3 text3 text3 text3 text3 text3 text3 text3 text3
+    .lower-content
+      .element
+      %form
+        %input.element__text{placeholder: "  Type a text here."}
+          %label.element__text--icon
+            = fa_icon 'picture-o', class: 'icon'
+          / %input.invisible{type:'file'}
+        %input.element__button{type:'submit', value:'SEND'}

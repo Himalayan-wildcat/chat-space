@@ -1,2 +1,8 @@
-@import "./reset";
 @import "font-awesome";
+@import "config/reset";
+@import "config/color";
+@import "modules/side_bar";
+@import "modules/contents";
+@import "mixins/clearfix";
+@import "messages"
+
