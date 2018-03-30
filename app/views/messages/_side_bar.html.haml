@@ -1,11 +1,12 @@
 .header
   .header__login-name
-    Hiro
+    = current_user.name
   %ul.header__lists
     %li.list
       = fa_icon 'pencil-square-o', class: 'icon1'
     %li.list
-      = fa_icon 'cog', class: 'icon2'
+      = link_to edit_user_path(current_user), method: :get do
+        = fa_icon 'cog', class: 'icon2'
 .groups
   .each-group
     .each-group__name
