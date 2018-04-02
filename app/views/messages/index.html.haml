@@ -6,7 +6,7 @@
     .upper-content
       .left-header
         .left-header__group-name
-          Group Name
+          = current_user.groups.name
           %ul.left-header__members
             Members:
             %li.member
@@ -15,7 +15,8 @@
               member2
       .right-header
         .right-header__edit-button
-          edit
+          = link_to edit_group_path(current_user), class:'edit-button' do
+            EDIT
     .mid-content
       .chat-space
         .upper-chat-space

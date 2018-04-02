@@ -32,6 +32,9 @@
       border: 1px solid $blue_for_buttons;
       float: right;
       line-height: 40px;
+      .edit-button {
+        text-decoration: none;
+      }
     }
   }
   .mid-content {

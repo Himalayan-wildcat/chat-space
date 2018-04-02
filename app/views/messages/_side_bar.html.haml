@@ -11,8 +11,10 @@
 .groups
   - current_user.groups.each do |group|
     .each-group
-      .each-group__name
-        = group.name
-      .each-group__message
-        abc abc abc
+      = link_to group_messages_path(group), method: :get do
+        .each-group__name
+          = group.name
+        .each-group__message
+          abc abc abc
+
 
