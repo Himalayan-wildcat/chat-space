@@ -1,6 +1,6 @@
 .container
   .side-bar
-    = render "side_bar"
+    = render "shared/side-bar"
 
   .contents
     .upper-content
@@ -21,30 +21,13 @@
       .chat-space
         .upper-chat-space
           .upper-chat-space__name
-            name1
+            / name1
           .upper-chat-space__date
-            yyyy/mm/dd
+            / yyyy/mm/dd
         .lower-chat-space
           .lower-chat-space__text
-            text1 text1 text1 text1 text1 text1 text1 text1 text1
-      .chat-space
-        .upper-chat-space
-          .upper-chat-space__name
-            name2
-          .upper-chat-space__date
-            yyyy/mm/dd
-        .lower-chat-space
-          .lower-chat-space__text
-            text2 text2 text2 text2 text2 text2 text2 text2 text2
-      .chat-space
-        .upper-chat-space
-          .upper-chat-space__name
-            name2
-          .upper-chat-space__date
-            yyyy/mm/dd
-        .lower-chat-space
-          .lower-chat-space__text
-            text3 text3 text3 text3 text3 text3 text3 text3 text3
+            / text1 text1 text1 text1 text1 text1 text1 text1 text1
+
     .lower-content
       %form
         %input.lower-content__text{placeholder: "  Type a text here."}
@@ -53,3 +36,4 @@
               = fa_icon 'picture-o', class: 'icon'
               %input.invisible{type:'file'}
         %input.lower-content__button{type:'submit', value:'SEND'}
+
