@@ -46,8 +46,8 @@
 <!-- |user_id|references|null: false, unique: true|
 |group_id|references|null: false, unique: true| -->
 
-|user_id|references|foreign_key: true, index:true|
-|group_id|references|foreign_key: true, index:true|
+|user|references|foreign_key: true, index:true|
+|group|references|foreign_key: true, index:true|
 
 ### Association
 - belongs_to :user
