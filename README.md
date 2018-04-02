@@ -43,11 +43,8 @@
 |------|----|-------|
 |body|text|
 |image|string|
-<!-- |user_id|references|null: false, unique: true|
-|group_id|references|null: false, unique: true| -->
-
-|user|references|foreign_key: true, index:true|
-|group|references|foreign_key: true, index:true|
+|user_id|references|null: false, unique: true|
+|group_id|references|null: false, unique: true|
 
 ### Association
 - belongs_to :user
