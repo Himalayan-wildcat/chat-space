@@ -1,4 +1,5 @@
 class ImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -15,7 +16,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
    # thumb バージョン(width 800px x height 800px)
   version :thumb do
-    process :resize_to_fit: [800,800]
+    process :resize_to_fit => [800,800]
   end
 
   # 許可する画像拡張子

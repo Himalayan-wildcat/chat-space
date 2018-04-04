@@ -6,7 +6,7 @@
     .upper-content
       .left-header
         .left-header__group-name
-
+          AAA
           %ul.left-header__members
             Members:
             %li.member
@@ -18,22 +18,14 @@
           = link_to edit_group_path(current_user), class:'edit-button' do
             EDIT
     .mid-content
-      .chat-space
-        .upper-chat-space
-          .upper-chat-space__name
-            / name1
-          .upper-chat-space__date
-            / yyyy/mm/dd
-        .lower-chat-space
-          .lower-chat-space__text
-            / text1 text1 text1 text1 text1 text1 text1 text1 text1
-
+      = render partial: 'message', collection: @messages
     .lower-content
-      %form
-        %input.lower-content__text{placeholder: "  Type a text here."}
-          .icon-element
-            %label.icon-element__image
-              = fa_icon 'picture-o', class: 'icon'
-              %input.invisible{type:'file'}
-        %input.lower-content__button{type:'submit', value:'SEND'}
+      = form_for [@group, @message] do |f|
+        = f.text_field :body, placeholder: 'Type your message here', class: 'lower-content__text'
+        .icon-element
+          = f.label :image, class: 'icon-element__image' do
+            = fa_icon 'picture-o'
+            = f.file_field :image, class: 'invisible'
+        = f.submit 'SEND', class: 'lower-content__button'
+
 

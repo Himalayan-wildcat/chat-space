@@ -1,0 +1,13 @@
+.chat-space
+  .upper-chat-space
+    .upper-chat-space__name
+      = message.user.name
+    .upper-chat-space__date
+      / yyyy/mm/dd
+  .lower-chat-space
+    .lower-chat-space__text
+      - if message.body.present?
+        %p.lower-message__content
+          = message.body
+      = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+      / text1 text1 text1 text1 text1 text1 text1 text1 text1
