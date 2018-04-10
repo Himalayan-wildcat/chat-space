@@ -3,11 +3,11 @@
     .upper-chat-space__name
       = message.user.name
     .upper-chat-space__date
-      / yyyy/mm/dd
+      -# = format_posted_time(message.created_at)
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .lower-chat-space
     .lower-chat-space__text
       - if message.body.present?
         %p.lower-message__content
           = message.body
       = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-      / text1 text1 text1 text1 text1 text1 text1 text1 text1
