@@ -11,6 +11,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    ##paramsとして送られてきたkeywordをUserモデルのnameカラムを検索→@usersに代入
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    # json formatにてユーザー名取得→jbuilderにてJSに返す
+    respond_to do |format|
+      format.json
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email)
