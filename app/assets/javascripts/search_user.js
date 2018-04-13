@@ -38,10 +38,10 @@ $(function(){
           data: {keyword: input},
           dataType: 'json',
         })
-        .done(function(users){
+        .done(function(users_data){
           $('#user-search-result').empty();
-          if(users.length !== 0){
-            users.forEach(function(user){
+          if(users_data.length !== 0){
+            users_data.forEach(function(user){
               show_user(user);
             });
           }
