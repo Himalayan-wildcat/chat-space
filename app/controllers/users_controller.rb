@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
 
+  def index
+    # paramsとして送られてきたkeywordをUserモデルのnameカラムを検索→@usersに代入
+    # ログインユーザーはインクリメンタルサーチの対象外
+    @users = User.where('name LIKE(?)', "#{params[:keyword]}%").where.not(id:current_user)
+    # json formatにてユーザー名取得→jbuilderにてJSに返す
+    respond_to do |format|
+      format.json
+    end
+  end
+
   def edit
   end
 
@@ -10,6 +20,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
 
   private
   def user_params
