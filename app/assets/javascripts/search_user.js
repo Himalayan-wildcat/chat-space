@@ -15,15 +15,15 @@ $(function(){
                     </div>
                   </div>
                   `
-      list.append(html);
+      return html;
     }
 
     // when there is NO match found
-    function show_no_user(user){
+    function show_no_user(){
       var html = `
                   <div class="chat-group-user clearfix">
                     <p class="chat-group-user__name">
-                      ${user}
+                      Show No User
                     </p>
                   </div>
                  `
@@ -31,7 +31,7 @@ $(function(){
     }
     $('#user-search-field').on('keyup', function(){
       var input = $(this).val();
-      if (input !== null ){
+      if (input !== "" ){
         $.ajax({
           url: '/users',
           type: 'GET',
@@ -39,19 +39,23 @@ $(function(){
           dataType: 'json',
         })
         .done(function(users_data){
-          $('#user-search-result').empty();
           if(users_data.length !== 0){
+            var html = "";
             users_data.forEach(function(user){
-              show_user(user);
+              html += show_user(user);
+              list.html(html);
             });
           }
           else{
-            show_no_user('No Match Found');
+            show_no_user();
           }
         })
         .fail(function(){
           alert('No User Matched.');
         })
+      }
+      else{
+        $('#user-search-result').empty();
       }
     })
   });
