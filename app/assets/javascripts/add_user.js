@@ -1,6 +1,6 @@
 $(function(){
 
-  var list = $('#chat-group-user')
+  var list = $('#chat-group-users')
 
   function addUser(user_id, user_name){
     var html = `
