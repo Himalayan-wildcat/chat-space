@@ -3,7 +3,19 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = @group.messages.includes(:user)
+
+    #メッセージがあれば、最新のidよりも新しいmessageのid検索結果を@messagesに代入
+    if params[:message_id].present?
+      @messages = @group.messages.where('id > ?', params[:message_id])
+    
+    else
+      @messages = @group.messages.includes(:user)
+    end
+
+    respond_to do |format|
+      format.html { @messages }
+      format.json { @messages }
+    end
   end
 
   def create

@@ -9,13 +9,11 @@
       = link_to edit_user_path(current_user), method: :get do
         = fa_icon 'cog', class: 'icon2'
 .groups
-  - current_user.groups.each do |group|
+  .group
     .each-group
-      = link_to group_messages_path(group), method: :get do
-        .each-group__name
-          = group.name
-        .each-group__message
-          = group.show_last_message
-
-
-
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group), method: :get do
+          .each-group__name
+            = group.name
+          .each-group__message
+            = group.show_last_message
