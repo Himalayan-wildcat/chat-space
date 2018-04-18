@@ -60,3 +60,7 @@ gem 'pry-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'html2haml'
+
+group :production do
+  gem 'unicorn'
+end
