@@ -65,6 +65,10 @@ gem 'pry-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'html2haml'
+gem 'fog'
+
+# 環境変数をchat-spaceディレクトリ内で設定する為のgem
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 group :production do
   gem 'unicorn'
