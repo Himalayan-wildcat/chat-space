@@ -18,3 +18,4 @@
 
 # Ignore all the images uploaded on Chat-space
 /public/uploads/
+/.env

@@ -83,6 +83,10 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.2.2)
+    dotenv-rails (2.2.2)
+      dotenv (= 2.2.2)
+      railties (>= 3.2, < 6.0)
     erb2haml (0.1.5)
       html2haml
     erubis (2.7.0)
@@ -428,6 +432,7 @@ DEPENDENCIES
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   devise
+  dotenv-rails
   erb2haml
   fog
   font-awesome-rails
