@@ -66,7 +66,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'html2haml'
 gem 'fog'
-
+gem 'sprockets-es6', require: 'sprockets/es6'
 # 環境変数をchat-spaceディレクトリ内で設定する為のgem
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 
